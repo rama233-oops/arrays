@@ -13,6 +13,7 @@ int main()
    ve.push_back(30);
    ve.push_back(40);
    ve.push_back(50);
+   int flag=0;
    
    vector<int>::iterator it=ve.begin();
    while(1)
@@ -20,16 +21,23 @@ int main()
    	if(x==(*it))
    	{
    		ind=it-ve.begin();
+   		flag=1;
    		break;
    		
 	  }
 	  it++;
 	  
    }
+   if(flag=1)
+   {
    ve.erase(ve.begin()+ind);
 for(vector<int>::iterator it=ve.begin();it!=ve.end();it++)
 {
 	cout<<*(it)<<" ";
-   }   return 0;
+   }
+   }
+   else
+      cout<<-1;
+      return 0;
    
 }
